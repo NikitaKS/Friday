@@ -3,7 +3,14 @@ export const SET_PASS = '/login/SET_PASS';
 export const REMEMBER_ME = '/login/REMEMBER_ME';
 export const SET_SERVER_USER_DATA = '/login/SET_SERVER_USER_DATA';
 export const SET_SERVER_ERROR = '/login/SET_SERVER_ERROR';
-export const IS_LOADING = '/login/IS_LOADING';
+export const SET_STATUS = '/login/SET_STATUS';
+
+export const STATUSES = {
+    LOADING: 'LOADING',
+    SUCCESS: 'SUCCESS',
+    NOT_INIT: 'NOT_INIT',
+    ERROR: 'ERROR'
+};
 
 interface ISetEmail {
     type: typeof SET_EMAIL,
@@ -44,12 +51,18 @@ interface IServerError {
     error: string,
 }
 
-interface IIsLoading {
-    type: typeof IS_LOADING,
-    isLoading: boolean
+interface ISetStatus {
+    type: typeof SET_STATUS,
+    status: string
 }
 
-export type LoginActions = ISetEmail | ISetPass | IRememberMe | ISetServerUserData | IServerError | IIsLoading;
+export type LoginActions =
+    ISetEmail
+    | ISetPass
+    | IRememberMe
+    | ISetServerUserData
+    | ISetStatus
+    | IServerError;
 
 export const setEmailAC = (email: string): ISetEmail => {
     return {type: SET_EMAIL, email}
@@ -67,6 +80,6 @@ export const setServerUserData = (data: IServerData, isAuth: boolean): ISetServe
 export const setServerError = (error: string): IServerError => {
     return {type: SET_SERVER_ERROR, error}
 };
-export const isLoadingAC = (isLoading: boolean): IIsLoading => {
-    return {type: IS_LOADING, isLoading}
+export const setStatus = (status: string): ISetStatus => {
+    return {type: SET_STATUS, status}
 };

@@ -1,12 +1,13 @@
 import {
-    IS_LOADING,
     IServerData,
     LoginActions,
     REMEMBER_ME,
     SET_EMAIL,
     SET_PASS,
     SET_SERVER_ERROR,
-    SET_SERVER_USER_DATA
+    SET_SERVER_USER_DATA,
+    SET_STATUS,
+    STATUSES
 } from "./ActionCreatorsLogin/ActionCreatorsLogin";
 
 
@@ -17,7 +18,7 @@ interface IInitialState {
     serverData: IServerData | {},
     error: string,
     isAuth: boolean,
-    isLoading: boolean
+    status: string
 }
 
 let initialState: IInitialState = {
@@ -27,7 +28,7 @@ let initialState: IInitialState = {
     serverData: {},
     error: '',
     isAuth: false,
-    isLoading: false
+    status: STATUSES.NOT_INIT
 };
 
 
@@ -68,10 +69,10 @@ const reducerLogin = (state: IInitialState = initialState, action: LoginActions)
                 isAuth: false
             }
         }
-        case IS_LOADING: {
+        case SET_STATUS: {
             return {
                 ...state,
-                isLoading: action.isLoading
+                status: action.status
             }
         }
         default:
