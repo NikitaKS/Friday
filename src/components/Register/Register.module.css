@@ -4,8 +4,10 @@
     padding: 16px;
 }
 .wrapper{
+    margin-top: -200px;
     background-color: peachpuff;
     padding: 20px;
+    width: 500px;
 }
 
 input[type=text], input[type=password] {
@@ -21,7 +23,9 @@ input[type=text]:focus, input[type=password]:focus {
     background-color: #ddd;
     outline: none;
 }
-
+h4{
+    text-align: center;
+}
 .registerbtn {
     background-color: #4CAF50;
     color: white;
