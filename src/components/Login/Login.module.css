@@ -1,19 +1,23 @@
-.loginWrapper{
-  display: flex;
-  flex-direction: column;
+.loginWrapper {
+    display: flex;
+    flex-direction: column;
 }
-.loginWrapper span{
-  color: orange;
-  font-weight: bold;
+
+.loginWrapper span {
+    color: orange;
+    font-weight: bold;
 }
-.inputWrapper{
-  display: flex;
-  flex-direction: column;
+
+.inputWrapper {
+    display: flex;
+    flex-direction: column;
 }
-.inputRemember{
-  display: flex;
+
+.inputRemember {
+    display: flex;
 }
-.error{
-  color: red;
-  font-weight: bold;
+
+.error {
+    color: red;
+    font-weight: bold;
 }

@@ -2,7 +2,6 @@ import {ThunkAction, ThunkDispatch} from "redux-thunk";
 import {AppState} from "../store";
 import {LoginActions, setServerUserData, setServerError, isLoadingAC} from "../ActionCreatorsLogin/ActionCreatorsLogin";
 import {apiLogin} from "../../dal/apiLogin";
-import {emailValidator, passValidator} from "../../helpers/inputValidators/loginValidators";
 
 type Return = void;
 type ExtraArgument = {};
