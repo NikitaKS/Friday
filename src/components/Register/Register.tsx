@@ -56,18 +56,18 @@ class Register extends React.Component<IProps, IState> {
                                 {this.props.error}
                             </div>
                         </div>
-                        <input placeholder="Email" value={this.state.email}
+                        <input className={style.inputForm} placeholder="Email" value={this.state.email}
                                onChange={(e) => this.setState({email: e.currentTarget.value})} name="email"
                                type="text"
                                required/>
                     </div>
                     <div>
-                        <input placeholder="Password" value={this.state.password}
+                        <input className={style.inputForm} placeholder="Password" value={this.state.password}
                                onChange={(e) => this.setState({password: e.currentTarget.value})} name="password"
                                type="password" required/>
                     </div>
                     <div>
-                        <input placeholder="Repeat Password" value={this.state.confPass}
+                        <input className={style.inputForm} placeholder="Repeat Password" value={this.state.confPass}
                                onChange={(e) => this.setState({confPass: e.currentTarget.value})} name="password"
                                type="password" required/>
                     </div>
