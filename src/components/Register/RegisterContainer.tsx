@@ -1,9 +1,10 @@
 import React from 'react';
 import Register from "./Register";
 import {connect} from "react-redux";
-import {registerUserThunk, successUserAddeACAC} from "../../redux/reducerRegister";
 import {Dispatch} from "redux";
 import {AppState} from "../../redux/store";
+import {registerUserThunk} from "../../redux/ThunkCreators/ThunksRegister";
+import {successUserAddeACAC} from "../../redux/ActionCreatorRegister/ActionCreatorRegister";
 
 
 interface IMapDispatchToProps {

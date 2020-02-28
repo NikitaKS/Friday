@@ -1,4 +1,4 @@
-import {IResponse} from "../interfaces/types";
+import {IResponse} from "../components/Register/interfaces/types";
 const axios = require('axios');
 
 interface IInstanceControll {
