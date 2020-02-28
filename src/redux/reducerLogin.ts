@@ -22,8 +22,8 @@ interface IInitialState {
 }
 
 let initialState: IInitialState = {
-    email: 'nikolas@gmail.com',
-    password: "1234567890",
+    email: 'test@email.nya',
+    password: "ftc{.}mxy~gub%jzc",
     rememberMe: true,
     serverData: {},
     error: '',
