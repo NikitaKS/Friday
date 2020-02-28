@@ -1,9 +1,4 @@
-import {Dispatch} from "redux";
-import {
-    IResponse, ISetUserDataAction, ISetUserDataErrorAction, ISuccessUserAdded, IToggleIsFetching,
-    IUserData
-} from "../components/Register/interfaces/types";
-import {usersAPI} from "../components/Register/api/api";
+import {ReducerActionsTypes} from "./ActionCreatorRegister/ActionCreatorRegister";
 
 export const SET_USER_DATA = "SET_USER_DATA"
 export const SET_ERROR = "SET_ERROR";
@@ -69,29 +64,8 @@ const reducerRegister = (state: IInitialState = initialState, action: ReducerAct
 };
 
 
-type ReducerActionsTypes = ISetUserDataAction | ISetUserDataErrorAction | IToggleIsFetching | ISuccessUserAdded;
 
 
-export const successUserAddeACAC = (success: boolean): ISuccessUserAdded => ({type: SUCCESS_USER_ADDED, success})
-
-export const toogleIsFetchingAC = (isFetching: boolean): IToggleIsFetching => ({type: TOGGLE_IS_FETCHING, isFetching})
-
-export const setUserDataAC = (userData: IUserData): ISetUserDataAction => ({type: SET_USER_DATA, userData})
-export const setUserDataError = (error: string): ISetUserDataErrorAction => ({type: SET_ERROR, error})
-
-export const registerUserThunk = (email: string, password: string): any => {
-    return async (dispatch: Dispatch) => {
-        dispatch(toogleIsFetchingAC(true));
-        await usersAPI.addUser({email: email, password: password}).then((response: IResponse) => {
-            dispatch(successUserAddeACAC(true))
-            dispatch(setUserDataAC(response.data))
-        }).catch((e: any) => {
-            let error = e.response.data.error;
-            dispatch(setUserDataError(error))
-        })
-        dispatch(toogleIsFetchingAC(false));
-    }
-}
 
 
 export default reducerRegister;
